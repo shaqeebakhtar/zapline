@@ -20,6 +20,11 @@ export const execute = inngest.createFunction(
         model: google('gemini-2.5-flash'),
         system: 'You are a helpful assistant that can generate text.',
         prompt: 'What 7*7 is?',
+        experimental_telemetry: {
+          isEnabled: true,
+          recordInputs: true,
+          recordOutputs: true,
+        },
       }
     );
     const { steps: openaiSteps } = await step.ai.wrap(
@@ -29,6 +34,11 @@ export const execute = inngest.createFunction(
         model: openai('gpt-4o'),
         system: 'You are a helpful assistant that can generate text.',
         prompt: 'What is the capital of France?',
+        experimental_telemetry: {
+          isEnabled: true,
+          recordInputs: true,
+          recordOutputs: true,
+        },
       }
     );
     const { steps: anthropicSteps } = await step.ai.wrap(
@@ -38,6 +48,11 @@ export const execute = inngest.createFunction(
         model: anthropic('claude-3-5-sonnet'),
         system: 'You are a helpful assistant that can generate text.',
         prompt: 'Whats 2+2?',
+        experimental_telemetry: {
+          isEnabled: true,
+          recordInputs: true,
+          recordOutputs: true,
+        },
       }
     );
 

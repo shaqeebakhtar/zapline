@@ -22,6 +22,9 @@ const Page = () => {
       onSuccess: () => {
         toast.success('AI execution started');
       },
+      onError: (error) => {
+        toast.error('Something went wrong');
+      },
     })
   );
 
