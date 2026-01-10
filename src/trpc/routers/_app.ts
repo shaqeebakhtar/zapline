@@ -1,10 +1,15 @@
 import prisma from '@/lib/db';
-import { baseProcedure, createTRPCRouter, protectedProcedure } from '../init';
+import {
+  baseProcedure,
+  createTRPCRouter,
+  premiumProcedure,
+  protectedProcedure,
+} from '../init';
 import { inngest } from '@/inngest/client';
 import { TRPCError } from '@trpc/server';
 
 export const appRouter = createTRPCRouter({
-  testAi: protectedProcedure.mutation(async () => {
+  testAi: premiumProcedure.mutation(async () => {
     // throw new TRPCError({ code: 'BAD_REQUEST', message: 'Test error' });
 
     await inngest.send({
