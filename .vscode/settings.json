@@ -4,5 +4,7 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports.biome": true
   },
-  "prettier.enable": false
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  }
 }
